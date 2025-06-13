@@ -1,5 +1,6 @@
 from colorama import Fore
 from preguntas import preguntas
+from colorama import Fore
 
 def hacer_preguntas(lista_preguntas):
     puntaje = 0
@@ -24,29 +25,40 @@ def hacer_preguntas(lista_preguntas):
             puntaje += 10
             correctas.append(p['pregunta'])
         else:
-            print(f"{Fore.RED}❌ Incorrecto. La respuesta correcta era: {p['respuesta']}\n")
+            print(f"{Fore.RED}❌ Incorrecto. La respuesta correcta era: {p['respuesta']}")
+            if "mensaje" in p:
+                print(f"{Fore.YELLOW}{p['mensaje']}\n")
+            else:
+                print()
             incorrectas.append(p['pregunta'])
 
     return puntaje, correctas, incorrectas
 
 def resumen_final(nombre, puntaje, correctas, incorrectas):
-    print(f"\n🧾 {Fore.MAGENTA}Resumen Final del Juego:")
-    print(f"👤 Jugador: {nombre}")
-    print(f"🏆 Puntaje total: {puntaje} puntos")
-    print(f"✅ Respuestas correctas: {len(correctas)}")
-    print(f"❌ Respuestas incorrectas: {len(incorrectas)}")
+    total_preguntas = len(correctas) + len(incorrectas)
+
+    print(f"\n🧾 {Fore.MAGENTA}Resumen Final del Juego")
+    print(f"{Fore.CYAN}👤 Nombre del jugador: {nombre}")
+    print(f"{Fore.YELLOW}🏆 Puntaje obtenido: {puntaje} puntos")
+    print(f"✅ Preguntas respondidas correctamente: {len(correctas)} de {total_preguntas}")
+    print(f"❌ Preguntas respondidas incorrectamente: {len(incorrectas)}")
 
     if correctas:
-        print(f"\n{Fore.GREEN}Preguntas correctas:")
+        print(f"\n{Fore.GREEN}✔️ Preguntas correctas:")
         for preg in correctas:
             print(f" - {preg}")
 
     if incorrectas:
-        print(f"\n{Fore.RED}Preguntas incorrectas:")
+        print(f"\n{Fore.RED}❌ Preguntas incorrectas:")
         for preg in incorrectas:
             print(f" - {preg}")
 
-    print(f"\n🎉 ¡Gracias por jugar, {nombre}!\n")
+    print(f"\n{Fore.BLUE}🎉 ¡Gracias por participar y jugar, {nombre}!\n")
+    print(f"{Fore.MAGENTA}Este juego fue desarrollado con mucho entusiasmo y dedicación")
+    print(f"por Sheyla Astorga, para que aprender sea divertido y motivador.")
+    print("¡Espero que hayas disfrutado la experiencia y vuelvas pronto a desafiar tus conocimientos! 🚀\n")
+
+
 
 def jugar(nombre, categoria):
     puntaje_total = 0
