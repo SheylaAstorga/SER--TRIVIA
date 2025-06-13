@@ -17,13 +17,6 @@ El juego incluye mensajes educativos, un sistema de puntos y una interfaz colori
 
 ---
 
-## 🗂️ Archivos del proyecto
-
-- `trivia.py` → Lógica principal del juego (menú, preguntas, puntaje, final).
-- `preguntas.py` → Diccionarios con preguntas, respuestas y mensajes educativos.
-
----
-
 ## 🚀 Cómo jugar
 
 1. Asegurate de tener Python 3 instalado.
