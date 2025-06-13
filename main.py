@@ -1,6 +1,8 @@
 import time
 from colorama import init, Fore, Style
 from menu import menu_categorias
+from juego import jugar
+
 import os
 
 init(autoreset=True)
@@ -68,8 +70,8 @@ def main():
     if nombre:
         portada(nombre)
         categoria = menu_categorias()
-        
         print(f"Arrancando el juego con categoría: {categoria}")
+        jugar(nombre, categoria)
     else:
         print("Juego cerrado.")
         exit()
