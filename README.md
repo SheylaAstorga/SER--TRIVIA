@@ -31,3 +31,8 @@ El juego incluye mensajes educativos, un sistema de puntos y una interfaz colori
 
    ```bash
    pip install colorama
+
+3.Ejecutá el juego desde la terminal o desde el botón Run Python file:
+
+```bash
+python trivia.py
