@@ -1,5 +1,6 @@
 import time
 from colorama import init, Fore, Style
+from menu import menu_categorias
 import os
 
 init(autoreset=True)
@@ -66,10 +67,12 @@ def main():
     nombre = login()
     if nombre:
         portada(nombre)
-        print(f"{Fore.CYAN}Aquí arrancaría el juego para {nombre}...")
+        categoria = menu_categorias()
+        
+        print(f"Arrancando el juego con categoría: {categoria}")
     else:
-        print(f"{Fore.RED}El juego se cerrará.")
+        print("Juego cerrado.")
         exit()
-
+        
 if __name__ == "__main__":
     main()
