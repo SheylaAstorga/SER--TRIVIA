@@ -41,6 +41,7 @@ def portada(nombre_usuario=None):
     print(f"{Fore.CYAN}  Dificultad: Fácil / Difícil\n")
     print(f"{Fore.YELLOW}  🎮 ¡Preparate para demostrar cuánto sabés!\n")
     input(f"{Fore.LIGHTWHITE_EX}  Presioná Enter para comenzar...")
+    print()
     limpiar_pantalla()
 
 def login():

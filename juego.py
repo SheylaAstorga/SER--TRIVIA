@@ -1,6 +1,6 @@
 from colorama import Fore
 from preguntas import preguntas
-from colorama import Fore
+import os
 
 def hacer_preguntas(lista_preguntas):
     puntaje = 0
@@ -8,7 +8,7 @@ def hacer_preguntas(lista_preguntas):
     incorrectas = []
 
     for p in lista_preguntas:
-        print(f"\n❓ {p['pregunta']}")
+        print(f"\n {p['pregunta']}")
         for i, opcion in enumerate(p['opciones'], 1):
             print(f"  {i}. {opcion}")
 
@@ -31,7 +31,18 @@ def hacer_preguntas(lista_preguntas):
             else:
                 print()
             incorrectas.append(p['pregunta'])
+        while True:
+            continuar = input("¿Deseás seguir jugando? (S/N): ").strip().upper()
+            if continuar in ["S", "N"]:
+                break
+            else:
+                print("⚠️ Opción inválida. Ingresá S para seguir o N para salir.")
 
+        if continuar == "N":
+            print(f"{Fore.CYAN}👋 ¡Gracias por jugar! Salís con {puntaje} puntos.\n")
+            break
+        else:
+            os.system("cls") 
     return puntaje, correctas, incorrectas
 
 def resumen_final(nombre, puntaje, correctas, incorrectas):
