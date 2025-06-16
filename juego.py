@@ -39,7 +39,7 @@ def hacer_preguntas(lista_preguntas):
                 print("⚠️ Opción inválida. Ingresá S para seguir o N para salir.")
 
         if continuar == "N":
-            print(f"{Fore.CYAN}👋 ¡Gracias por jugar! Salís con {puntaje} puntos.\n")
+            print(f"{Fore.CYAN}👋 ¡Gracias por jugar!")
             break
         else:
             os.system("cls") 

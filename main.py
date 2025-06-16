@@ -49,6 +49,7 @@ def login():
     intentos = 3
 
     while intentos > 0:
+        print(f"{Fore.YELLOW}BIENVENIDO A ¿SERÁ? ")
         print(f"{Fore.CYAN}🔐 Iniciá sesión para jugar")
         nombre_usuario = input("👤 Ingresá tu nombre: ")
         contraseña = input("🔑 Contraseña: ")
