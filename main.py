@@ -85,6 +85,9 @@ def main():
         jugar(nombre, categoria)  # Inicia el juego con usuario y categoría elegida
     else:
         print("Juego cerrado.")
-        exit()  # Sale del programa si login falla     
+        exit()  # Sale del programa si login falla   
+    
+    input(f"{Fore.LIGHTWHITE_EX}\nPresioná Enter para salir del juego...")  
+    
 if __name__ == "__main__":
     main()
